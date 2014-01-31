@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<!-- An example log4j configuration xml file for log4jdbc -->
+<!-- Logging levels are:                                  -->
+<!-- DEBUG < INFO < WARN < ERROR < FATAL                  -->
+
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<appender name="stdout-appender" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p:[%d{yyyy-MM-dd HH:mm:ss.SSS}] %c{1}: %n%m%n%n"/>
+		</layout>
+	</appender>
+	
+	<appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="encoding" value="UTF-8" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd"/>
+		<param name="File" value="./logs/restaurant.log"/>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%p:[%d{yyyy-MM-dd HH:mm:ss.SSS}] %c{1}: %n%m%n%n"/>
+		</layout>
+	</appender>
+
+	<!-- by default, log everything to the console with a level of WARN or higher -->
+	<root>
+		<level value="info"/>
+		<appender-ref ref="stdout-appender"/>
+		<appender-ref ref="fileAppender" />
+	</root>
+</log4j:configuration>
