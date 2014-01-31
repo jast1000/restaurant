@@ -16,11 +16,13 @@ public class LineaOrden {
     private Integer idPlatillo;
     private String observacion;
     private Boolean cobrado;
+    private Double subtotal;
+    private Double precioPlatillo;
 
     public LineaOrden() {
     }
 
-    public LineaOrden(Integer noOrden, Integer ticket, Integer noMesa, Integer cantPlatillo, Integer idPlatillo, String observacion, Boolean cobrado) {
+    public LineaOrden(Integer noOrden, Integer ticket, Integer noMesa, Integer cantPlatillo, Integer idPlatillo, String observacion, Boolean cobrado, Double subtotal, Double precioPlatillo) {
         this.noOrden = noOrden;
         this.ticket = ticket;
         this.noMesa = noMesa;
@@ -28,6 +30,8 @@ public class LineaOrden {
         this.idPlatillo = idPlatillo;
         this.observacion = observacion;
         this.cobrado = cobrado;
+        this.subtotal = subtotal;
+        this.precioPlatillo = precioPlatillo;
     }
 
     public Integer getNoOrden() {
@@ -84,6 +88,22 @@ public class LineaOrden {
 
     public void setCobrado(Boolean cobrado) {
         this.cobrado = cobrado;
+    }
+
+    public Double getSubtotal() {
+        return subtotal;
+    }
+
+    public void setSubtotal(Double subtotal) {
+        this.subtotal = subtotal;
+    }
+
+    public Double getPrecioPlatillo() {
+        return precioPlatillo;
+    }
+
+    public void setPrecioPlatillo(Double precioPlatillo) {
+        this.precioPlatillo = precioPlatillo;
     }
 
     @Override

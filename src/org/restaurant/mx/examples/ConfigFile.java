@@ -18,9 +18,9 @@ public class ConfigFile {
 
 		//Para generar archivo requiero:
 		ci.setUsuario("root");
-		ci.setClave("l.juji9");
+		ci.setClave("chucho25");
 		ci.setServidor("localhost");
-		ci.setBd("restaurante");
+		ci.setBd("test01");
 		cu.setConInfo(ci);
 
 		//Directorio para generar archivo.

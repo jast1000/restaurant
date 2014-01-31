@@ -154,7 +154,7 @@ public class ControladorEmpleado extends Controlador<EmpleadoInfo> {
 
         Object emp[][] = conector.consultar(sql.toString());
 
-        if (emp != null) {
+        if (emp.length != 0) {
             ei.setIdEmpleado((Integer) emp[0][0]);
             ei.setNoombres((String) emp[0][1]);
             ei.setApellidos((String) emp[0][2]);
@@ -183,7 +183,38 @@ public class ControladorEmpleado extends Controlador<EmpleadoInfo> {
         log.info(sql);
 
         Object emps[][] = conector.consultar(sql.toString());
-        if (emps != null) {
+        if (emps.length != 0) {
+            for (Object filaEmp[] : emps) {
+                le.add(new EmpleadoInfo((String) filaEmp[7],
+                        (String) filaEmp[8],
+                        (String) filaEmp[9],
+                        (String) filaEmp[10],
+                        (Integer) filaEmp[0],
+                        (String) filaEmp[1],
+                        (String) filaEmp[2],
+                        (Boolean) filaEmp[3],
+                        (Integer) filaEmp[4],
+                        (String) filaEmp[5],
+                        (String) filaEmp[6]));
+            }
+        } else {
+            return null;
+        }
+
+        return le;
+    }
+
+    public List<EmpleadoInfo> listarPorTipo(Integer tipo) {
+        List<EmpleadoInfo> le = new ArrayList<EmpleadoInfo>();
+
+        String sql = "SELECT emp.id_empleado, emp.nombre, emp.apellidos, emp.activo, emp.tipo_emp, emp.usuario, emp.`password`, inf.ciudad, "
+                + "inf.direccion, inf.correo, inf.telefono FROM empleado AS emp INNER JOIN info_empleado AS inf ON inf.id_empleado = emp.id_empleado"
+                + " WHERE emp.TIPO_EMP = " + tipo;
+
+        log.info(sql);
+
+        Object emps[][] = conector.consultar(sql.toString());
+        if (emps.length != 0) {
             for (Object filaEmp[] : emps) {
                 le.add(new EmpleadoInfo((String) filaEmp[7],
                         (String) filaEmp[8],

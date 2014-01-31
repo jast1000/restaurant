@@ -19,17 +19,17 @@ import org.restaurant.mx.desktop.app.AppPrincipal;
  *
  * @author Leonardo Guzman Reyes
  */
-public class JVentasView extends JAbstractManageableIFrame{
+public class JTicketsView extends JAbstractManageableIFrame{
 
 	private JAbstractMDI app;
 	private AbstractPanelView panel;
 	private VentasService service;
 
 			
-	public JVentasView(JAbstractMDI app) throws CreationServiceExcetion {
+	public JTicketsView(JAbstractMDI app) throws CreationServiceExcetion {
 		super();
 		this.app=app;
-		panel=new JVentasPanel(this.app);
+		panel=new JTicketsPanel(this.app);
 		init();
 		service=(VentasService) this.app.getServicesFactory().getService("ventas");
 		service.guardarVenta("");
@@ -42,7 +42,7 @@ public class JVentasView extends JAbstractManageableIFrame{
         setMaximizable(true);
         setResizable(true);
         setClosable(true);
-        Dimension d = new Dimension(800, 500);
+        Dimension d = new Dimension(800, 550);
         setSize(d);
         setPreferredSize(d);
 	}
@@ -60,7 +60,7 @@ public class JVentasView extends JAbstractManageableIFrame{
 
 	@Override
 	public String getNameView() {
-		return AppPrincipal.VENTA_ACTION;
+		return AppPrincipal.TICKETS_ACTION;
 	}
 
 	@Override

@@ -9,7 +9,6 @@ import org.restaurant.mx.conector.ConectorBasico;
 import org.restaurant.mx.modelo.LineaOrden;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 /**
@@ -34,6 +33,12 @@ public class ControladorLineaOrden extends Controlador<LineaOrden> {
         return conector.actualizar(sql);
     }
 
+    public boolean eliminarLineasTicket(Integer idTicket) {
+        String sql = "DELETE FROM LINEA_ORDEN WHERE TICKET = " + idTicket;
+        log.info(sql);
+        return conector.actualizar(sql);
+    }
+    
     @Override
     public boolean actualizar(LineaOrden clazz) {
         StringBuilder sql = new StringBuilder();
@@ -45,6 +50,10 @@ public class ControladorLineaOrden extends Controlador<LineaOrden> {
         sql.append(clazz.getCantPlatillo());
         sql.append(", ID_PLATILLO = ");
         sql.append(clazz.getIdPlatillo());
+        sql.append(", PRECIO_PLATILLO = ");
+        sql.append(clazz.getPrecioPlatillo());
+        sql.append(", SUBTOTAL = ");
+        sql.append(clazz.getSubtotal());
         sql.append(", OBSERVACION = '");
         sql.append(clazz.getObservacion());
         sql.append("', COBRADO = ");
@@ -72,6 +81,10 @@ public class ControladorLineaOrden extends Controlador<LineaOrden> {
         sb.append(clazz.getCantPlatillo());
         sb.append(",");
         sb.append(clazz.getIdPlatillo());
+        sb.append(", ");
+        sb.append(clazz.getPrecioPlatillo());
+        sb.append(", ");
+        sb.append(clazz.getSubtotal());
         sb.append(", '");
         sb.append(clazz.getObservacion());
         sb.append("',");
@@ -96,14 +109,16 @@ public class ControladorLineaOrden extends Controlador<LineaOrden> {
         log.info(sql);
 
         Object datos[][] = conector.consultar(sql);
-        if (datos != null) {
+        if (datos.length != 0) {
             lo.setNoOrden((Integer) datos[0][0]);
             lo.setTicket((Integer) datos[0][1]);
             lo.setNoMesa((Integer) datos[0][2]);
             lo.setCantPlatillo((Integer) datos[0][3]);
             lo.setIdPlatillo((Integer) datos[0][4]);
-            lo.setObservacion((String) datos[0][5]);
-            lo.setCobrado((Boolean) datos[0][6]);
+            lo.setPrecioPlatillo((Double) datos[0][5]);
+            lo.setSubtotal((Double) datos[0][6]);
+            lo.setObservacion((String) datos[0][7]);
+            lo.setCobrado((Boolean) datos[0][8]);
         } else {
             return null;
         }
@@ -144,8 +159,10 @@ public class ControladorLineaOrden extends Controlador<LineaOrden> {
                         (Integer) filaDato[2],
                         (Integer) filaDato[3],
                         (Integer) filaDato[4],
-                        (String) filaDato[5],
-                        (Boolean) filaDato[6]));
+                        (String) filaDato[7],
+                        (Boolean) filaDato[8],
+                        (Double) filaDato[5],
+                        (Double) filaDato[6]));
             }
         } else {
             return null;

@@ -23,11 +23,12 @@ public class TicketInfo {
     private Double cambio;
     private Boolean cortado;
     private Date fechaCorte;
-
+    private Integer mesa;
+    
     public TicketInfo() {
     }
 
-    public TicketInfo(Integer idTicket, Integer empleado, Double total, Date fechaReg, Boolean cobrado, Date fechaPagado, Double recibio, Double cambio, Boolean cortado, Date fechaCorte) {
+    public TicketInfo(Integer idTicket, Integer empleado, Double total, Date fechaReg, Boolean cobrado, Date fechaPagado, Double recibio, Double cambio, Boolean cortado, Date fechaCorte, Integer mesa) {
         this.idTicket = idTicket;
         this.empleado = empleado;
         this.total = total;
@@ -38,6 +39,7 @@ public class TicketInfo {
         this.cambio = cambio;
         this.cortado = cortado;
         this.fechaCorte = fechaCorte;
+        this.mesa = mesa;
     }
 
     public Integer getIdTicket() {
@@ -119,6 +121,15 @@ public class TicketInfo {
     public void setFechaCorte(Date fechaCorte) {
         this.fechaCorte = fechaCorte;
     }
+
+    public Integer getMesa() {
+        return mesa;
+    }
+
+    public void setMesa(Integer mesa) {
+        this.mesa = mesa;
+    }
+    
 
     @Override
     public String toString() {

@@ -22,7 +22,7 @@ import org.developercircle.base.service.AppServiceFactory;
 import org.developercircle.base.service.CreationServiceExcetion;
 import org.developercircle.base.ui.mdi.JAbstractMDI;
 import org.restaurant.mx.desktop.app.view.JUsuariosView;
-import org.restaurant.mx.desktop.app.view.JVentasView;
+import org.restaurant.mx.desktop.app.view.JTicketsView;
 
 /**
  *
@@ -39,7 +39,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
     //Los ACTION para abrir  las ventanitas.
     public static final String USUARIOS_ACTION = "usuariosView";
     public static final String MESAS_ACTION = "mesasView";
-    public static final String VENTA_ACTION = "ventaView";
+    public static final String TICKETS_ACTION = "ticketsView";
     public static final String EMPRESA_ACTION = "empresaView";
     public static final String CATEGORIAS_ACTION = "categoriasView";
     public static final String PLATILLO_ACTION = "platilloView";
@@ -130,7 +130,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         menu.add(subMenu);
         
         subMenu = new JMenuItem("Ventas");
-        subMenu.setActionCommand(VENTA_ACTION);
+        subMenu.setActionCommand(TICKETS_ACTION);
         subMenu.addActionListener(this);
         subMenu.setEnabled(activa);
 
@@ -176,7 +176,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         JEmpresaView empresaView = new JEmpresaView(this);
         JCategoriaPlatilloView categoriasView = new JCategoriaPlatilloView(this);
         JPlatilloView platilloView = new JPlatilloView(this);
-        JVentasView ventaView = new JVentasView(this);
+        JTicketsView ventaView = new JTicketsView(this);
         
         mViews.addView(usuariosView);
         mViews.addView(mesasView);
