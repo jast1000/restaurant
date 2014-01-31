@@ -1,12 +1,12 @@
 package org.restaurant.mx.conector;
 
+import java.io.File;
 import org.restaurant.mx.util.ConexionInfo;
 import org.restaurant.mx.util.Encriptador;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Properties;
-import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 
 /**
@@ -15,70 +15,66 @@ import org.apache.log4j.Logger;
  */
 public class ConectorUtil {
 
-    private final Logger log = Logger.getLogger(ConectorUtil.class);
-    private ConexionInfo conInfo;
-    private Encriptador enc;
-    private Properties properties;
-    private String path = "C:\\";
-    private final String propestiesKey[] = {"servidor", "db", "usuario", "password"};
+	private final Logger log = Logger.getLogger(ConectorUtil.class);
+	private ConexionInfo conInfo;
+	private Encriptador enc;
+	private Properties properties;
+	private File cfgFile;
+	private final String propestiesKey[] = {"servidor", "db", "usuario", "password"};
 
-    public ConectorUtil() {
-        enc = new Encriptador();
+	public ConectorUtil() {
+		enc = new Encriptador();
 //		BasicConfigurator.configure();
-        properties = new Properties();
-    }
+		properties = new Properties();
 
-    public void setConInfo(ConexionInfo conInfo) {
-        this.conInfo = conInfo;
-    }
+		cfgFile = new File(String.format("%s%s%s",
+				System.getProperty("user.home"),
+				System.getProperty("file.separator"),
+				"restaurant.properties"));
+	}
 
-    public void createFile() {
-        try {
-            log.info("Asignando propiedades");
-            properties.setProperty(propestiesKey[0], conInfo.getServidor());
-            properties.setProperty(propestiesKey[1], conInfo.getBd());
-            properties.setProperty(propestiesKey[2], conInfo.getUsuario());
+	public void setConInfo(ConexionInfo conInfo) {
+		this.conInfo = conInfo;
+	}
 
-            log.info("Encriptamos la clave");
-            enc.setClave(conInfo.getClave());
-            conInfo.setClave(enc.encriptar());
-            properties.setProperty(propestiesKey[3], conInfo.getClave());
+	public void createFile() {
+		try {
+			log.info("Asignando propiedades");
+			properties.setProperty(propestiesKey[0], conInfo.getServidor());
+			properties.setProperty(propestiesKey[1], conInfo.getBd());
+			properties.setProperty(propestiesKey[2], conInfo.getUsuario());
 
-            log.info("creamos el archivo");
-            properties.store(new FileOutputStream(path + "\\restaurant.properties"), null);
+			log.info("Encriptamos la clave");
+			enc.setClave(conInfo.getClave());
+			conInfo.setClave(enc.encriptar());
+			properties.setProperty(propestiesKey[3], conInfo.getClave());
 
-        } catch (IOException e) {
-            log.error("Error", e);
-        }
-    }
+			log.info("creamos el archivo");
+			properties.store(new FileOutputStream(cfgFile), "Archivo de configuracion de Restaurant");
 
-    public ConexionInfo loadFile() {
-        conInfo = new ConexionInfo();
-        try {
-            log.info("Lectura del archivo");
-            properties.load(new FileInputStream(path + "\\restaurant.properties"));
+		} catch (IOException e) {
+			log.error("Error", e);
+		}
+	}
 
-            log.info("Obtenemos las propiedades");
-            conInfo.setServidor(properties.getProperty(propestiesKey[0]));
-            conInfo.setBd(properties.getProperty(propestiesKey[1]));
-            conInfo.setUsuario(properties.getProperty(propestiesKey[2]));
-            conInfo.setClave(properties.getProperty(propestiesKey[3]));
+	public ConexionInfo loadFile() {
+		conInfo = new ConexionInfo();
+		try {
+			log.info("Lectura del archivo");
+			properties.load(new FileInputStream(cfgFile));
 
-            log.info("Desencriptando....");
-            enc.setClave(conInfo.getClave());
-            conInfo.setClave(enc.desencriptar());
-        } catch (IOException e) {
-            log.error("Error", e);
-        }
-        return conInfo;
-    }
+			log.info("Obtenemos las propiedades");
+			conInfo.setServidor(properties.getProperty(propestiesKey[0]));
+			conInfo.setBd(properties.getProperty(propestiesKey[1]));
+			conInfo.setUsuario(properties.getProperty(propestiesKey[2]));
+			conInfo.setClave(properties.getProperty(propestiesKey[3]));
 
-    public String getPath() {
-        return path;
-    }
-
-    public void setPath(String path) {
-        this.path = path;
-    }
-
+			log.info("Desencriptando....");
+			enc.setClave(conInfo.getClave());
+			conInfo.setClave(enc.desencriptar());
+		} catch (IOException e) {
+			log.error("Error", e);
+		}
+		return conInfo;
+	}
 }
