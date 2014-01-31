@@ -21,25 +21,24 @@ public class ConectorBasico {
 	public ConectorBasico() {
 		//BasicConfigurator.configure();
 	}
-	
-	private String[] getURL()
-	{
+
+	private String[] getURL() {
 		ConectorUtil con = new ConectorUtil();
 		ConexionInfo prop = con.loadFile();
-		String url[]=new String[3];
-		url[0] = "jdbc:mysql://"+prop.getServidor()+"/"+prop.getBd();
+		String url[] = new String[3];
+		url[0] = "jdbc:mysql://" + prop.getServidor() + "/" + prop.getBd();
 		url[1] = prop.getUsuario();
 		url[2] = prop.getClave();
 		return url;
 	}
-	
+
 	private boolean conectar() {
 		boolean conectado = false;
 		String url[] = getURL();
 		try {
 			log.info("Conectando...");
 			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection(url[0],url[1],url[2]);
+			conexion = DriverManager.getConnection(url[0], url[1], url[2]);
 			conectado = !conectado;
 		} catch (ClassNotFoundException e) {
 			log.error("Error", e);
