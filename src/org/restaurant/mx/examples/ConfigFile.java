@@ -27,5 +27,7 @@ public class ConfigFile {
 		cu.createFile();
 		ConexionInfo loadFile = cu.loadFile();
 		log.info("Archivo generado: " + loadFile.toString());
+                
+                log.info("Meow!");
 	}
 }
