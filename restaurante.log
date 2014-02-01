@@ -106,3 +106,318 @@ Caused by: java.net.MalformedURLException
 Caused by: java.lang.NullPointerException
 	at java.net.URL.<init>(URL.java:524)
 	... 34 more
+INFO:[2014-02-01 06:52:02.343] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:52:03.512] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:52:03.516] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:52:04.789] Digester: 
+End event threw error
+
+java.lang.NoClassDefFoundError: org/apache/commons/beanutils/MethodUtils
+	at org.apache.commons.digester.CallMethodRule.end(CallMethodRule.java:632)
+	at org.apache.commons.digester.Rule.end(Rule.java:257)
+	at org.apache.commons.digester.Digester.endElement(Digester.java:1345)
+	at net.sf.jasperreports.engine.xml.JRXmlDigester.endElement(JRXmlDigester.java:186)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.endElement(AbstractSAXParser.java:606)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractXMLDocumentParser.emptyElement(AbstractXMLDocumentParser.java:183)
+	at com.sun.org.apache.xerces.internal.impl.xs.XMLSchemaValidator.emptyElement(XMLSchemaValidator.java:780)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.scanStartElement(XMLNSDocumentScannerImpl.java:353)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl$FragmentContentDriver.next(XMLDocumentFragmentScannerImpl.java:2768)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentScannerImpl.next(XMLDocumentScannerImpl.java:606)
+	at com.sun.org.apache.xerces.internal.impl.XMLNSDocumentScannerImpl.next(XMLNSDocumentScannerImpl.java:116)
+	at com.sun.org.apache.xerces.internal.impl.XMLDocumentFragmentScannerImpl.scanDocument(XMLDocumentFragmentScannerImpl.java:511)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:846)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:775)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1210)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:628)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1892)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:243)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:230)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:218)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:69)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:61)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.beanutils.MethodUtils
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:366)
+	at java.net.URLClassLoader$1.run(URLClassLoader.java:355)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:354)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424)
+	at sun.misc.Launcher$AppClassLoader.loadClass(Launcher.java:308)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	... 42 more
+INFO:[2014-02-01 06:52:46.453] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:52:47.655] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:52:47.660] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:52:53.716] JCorteCajaPanel: 
+Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259169262_187426.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259169262_187426.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:204)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:240)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:490)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:71)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:61)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+INFO:[2014-02-01 06:53:47.758] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:53:48.854] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:53:48.862] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:53:51.396] JCorteCajaPanel: 
+Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259230529_548989.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259230529_548989.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:204)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:240)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:490)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:71)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:61)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+INFO:[2014-02-01 06:56:28.447] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:56:29.688] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:56:29.693] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:56:32.375] JCorteCajaPanel: 
+Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259391473_216267.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259391473_216267.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:204)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:240)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:490)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:71)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:61)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+INFO:[2014-02-01 06:58:16.719] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:58:17.998] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:58:18.002] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+INFO:[2014-02-01 06:58:31.691] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:58:32.969] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:58:32.974] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:58:35.720] JCorteCajaPanel: 
+Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259514815_604765.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+
+net.sf.jasperreports.engine.JRException: Errors were encountered when compiling report expressions class file:
+/home/jimmy/Documents/Development/jast/github/restaurant/vale_combustible_1391259514815_604765.java:13: error: package com.sayco.oper.vale does not exist
+import com.sayco.oper.vale.*;
+^
+1 error
+
+	at net.sf.jasperreports.engine.design.JRAbstractCompiler.compileReport(JRAbstractCompiler.java:204)
+	at net.sf.jasperreports.engine.JasperCompileManager.compile(JasperCompileManager.java:240)
+	at net.sf.jasperreports.engine.JasperCompileManager.compileReport(JasperCompileManager.java:490)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:65)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:55)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+INFO:[2014-02-01 06:59:40.262] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:59:41.371] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:59:41.379] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+INFO:[2014-02-01 06:59:47.267] ControladorTicket: 
+SELECT ticket, id_empleado, total, fecha_reg, cobrado, fecha_pagado, recibio, cambio, cortado, fechaCorte FROM TICKET WHERE CORTADO = false
+
+INFO:[2014-02-01 06:59:47.283] ConectorUtil: 
+Lectura del archivo
+
+INFO:[2014-02-01 06:59:47.284] ConectorUtil: 
+Obtenemos las propiedades
+
+INFO:[2014-02-01 06:59:47.284] ConectorUtil: 
+Desencriptando....
+
+INFO:[2014-02-01 06:59:47.712] ConectorBasico: 
+Conectando...
+
+INFO:[2014-02-01 06:59:48.013] ConectorBasico: 
+Hay datos para leer
+
+INFO:[2014-02-01 07:14:28.433] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 07:14:29.724] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 07:14:29.730] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+INFO:[2014-02-01 07:14:35.176] ControladorTicket: 
+SELECT ticket, id_empleado, total, fecha_reg, cobrado, fecha_pagado, recibio, cambio, cortado, fechaCorte FROM TICKET WHERE CORTADO = false
+
+INFO:[2014-02-01 07:14:35.202] ConectorUtil: 
+Lectura del archivo
+
+INFO:[2014-02-01 07:14:35.210] ConectorUtil: 
+Obtenemos las propiedades
+
+INFO:[2014-02-01 07:14:35.210] ConectorUtil: 
+Desencriptando....
+
+INFO:[2014-02-01 07:14:35.549] ConectorBasico: 
+Conectando...
+
+INFO:[2014-02-01 07:14:35.854] ConectorBasico: 
+Hay datos para leer
+

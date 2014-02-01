@@ -7,10 +7,21 @@ import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
+import java.text.DateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.MissingResourceException;
+import java.util.ResourceBundle;
+import javax.swing.JOptionPane;
 import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
 import org.apache.log4j.Logger;
@@ -69,9 +80,30 @@ public class JCorteCajaPanel extends AbstractPanelView {
 	}
 	
 	private void listarNoCortados() {
+		if (jr != null) {
 		List<TicketInfo> sinCortar = adTickets.listarPorEstadoCortado(false); // Los tickets no cortados.
-		
-		
+			try {
+			Map<String, Object> params = new HashMap<>(4);
+			Locale lcl = Locale.getDefault();
+			DateFormat df = DateFormat.getDateInstance(DateFormat.SHORT, lcl);
+			ResourceBundle bundle = ResourceBundle.getBundle("com/jast/restaurante/reportes/corte_caja", lcl);
+			// 
+			params.put("STR_FECHA", df.format(Calendar.getInstance().getTime()) );
+			params.put("REPORT_RESOURCE_BUNDLE", bundle);
+
+			// 
+			JasperPrint jp = JasperFillManager.fillReport(jr, params, new JRBeanCollectionDataSource(sinCortar));
+			jrReporte.update(jp);
+		} catch (JRException jrex) {
+			log.error(jrex.getMessage(), jrex);
+			JOptionPane.showMessageDialog(this, "No se puede mostrar.");
+		} catch (MissingResourceException mrex) {
+			log.error(mrex.getMessage(), mrex);
+			JOptionPane.showMessageDialog(this, "No se pudo cargar el idioma.");
+		}
+		} else {
+			JOptionPane.showMessageDialog(this, "No se pudo cargar el reporte.");
+		}
 	}
 
 	@Override
