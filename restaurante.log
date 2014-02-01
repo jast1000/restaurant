@@ -1,0 +1,108 @@
+INFO:[2014-02-01 05:56:15.723] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 05:56:16.833] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 05:56:16.836] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 05:56:17.388] JCorteCajaPanel: 
+java.net.MalformedURLException
+
+net.sf.jasperreports.engine.JRException: java.net.MalformedURLException
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:251)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:230)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:218)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:52)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:44)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Caused by: java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:619)
+	at java.net.URL.<init>(URL.java:482)
+	at java.net.URL.<init>(URL.java:431)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:613)
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:189)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:810)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:775)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1210)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:628)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1892)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:243)
+	... 23 more
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:524)
+	... 34 more
+INFO:[2014-02-01 06:01:31.879] AppConfig: 
+Archivo de configuracion: /home/jimmy/dcadmin.conf
+
+INFO:[2014-02-01 06:01:33.066] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorInformes, inicializado exitosamente
+
+INFO:[2014-02-01 06:01:33.069] JAbstractMDI: 
+Bean para: org.restaurant.mx.controladores.ControladorTicket, inicializado exitosamente
+
+ERROR:[2014-02-01 06:01:33.584] JCorteCajaPanel: 
+java.net.MalformedURLException
+
+net.sf.jasperreports.engine.JRException: java.net.MalformedURLException
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:251)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:230)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.load(JRXmlLoader.java:218)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.cargarReporte(JCorteCajaPanel.java:52)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaPanel.<init>(JCorteCajaPanel.java:44)
+	at org.restaurant.mx.desktop.app.view.JCorteCajaView.<init>(JCorteCajaView.java:27)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initViews(AppPrincipal.java:191)
+	at org.restaurant.mx.desktop.app.AppPrincipal.initOtherComponents(AppPrincipal.java:81)
+	at org.restaurant.mx.desktop.app.AppPrincipal.<init>(AppPrincipal.java:61)
+	at org.restaurant.mx.desktop.app.RestaurantMain$1.run(RestaurantMain.java:37)
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:251)
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:733)
+	at java.awt.EventQueue.access$200(EventQueue.java:103)
+	at java.awt.EventQueue$3.run(EventQueue.java:694)
+	at java.awt.EventQueue$3.run(EventQueue.java:692)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$1.doIntersectionPrivilege(ProtectionDomain.java:76)
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:703)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:242)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:161)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:150)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:146)
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:138)
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:91)
+Caused by: java.net.MalformedURLException
+	at java.net.URL.<init>(URL.java:619)
+	at java.net.URL.<init>(URL.java:482)
+	at java.net.URL.<init>(URL.java:431)
+	at com.sun.org.apache.xerces.internal.impl.XMLEntityManager.setupCurrentEntity(XMLEntityManager.java:613)
+	at com.sun.org.apache.xerces.internal.impl.XMLVersionDetector.determineDocVersion(XMLVersionDetector.java:189)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:810)
+	at com.sun.org.apache.xerces.internal.parsers.XML11Configuration.parse(XML11Configuration.java:775)
+	at com.sun.org.apache.xerces.internal.parsers.XMLParser.parse(XMLParser.java:123)
+	at com.sun.org.apache.xerces.internal.parsers.AbstractSAXParser.parse(AbstractSAXParser.java:1210)
+	at com.sun.org.apache.xerces.internal.jaxp.SAXParserImpl$JAXPSAXParser.parse(SAXParserImpl.java:628)
+	at org.apache.commons.digester.Digester.parse(Digester.java:1892)
+	at net.sf.jasperreports.engine.xml.JRXmlLoader.loadXML(JRXmlLoader.java:243)
+	... 23 more
+Caused by: java.lang.NullPointerException
+	at java.net.URL.<init>(URL.java:524)
+	... 34 more
