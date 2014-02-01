@@ -21,6 +21,7 @@ import org.developercircle.app.AppConfig;
 import org.developercircle.base.service.AppServiceFactory;
 import org.developercircle.base.service.CreationServiceExcetion;
 import org.developercircle.base.ui.mdi.JAbstractMDI;
+import org.restaurant.mx.desktop.app.view.JCorteCajaView;
 import org.restaurant.mx.desktop.app.view.JUsuariosView;
 import org.restaurant.mx.desktop.app.view.JTicketsView;
 
@@ -43,6 +44,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
     public static final String EMPRESA_ACTION = "empresaView";
     public static final String CATEGORIAS_ACTION = "categoriasView";
     public static final String PLATILLO_ACTION = "platilloView";
+    public static final String CORTE_CAJA = "org.restaurant.mx.desktop.app.view.JCorteCajaView";
 
     public AppPrincipal(AppConfig config) {
         super();
@@ -94,9 +96,14 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         subMenu.setActionCommand(TICKETS_ACTION);
         subMenu.addActionListener(this);
         subMenu.setEnabled(activa);
-
-        //Agregar el sub menu a su padre
         menu.add(subMenu);
+		
+		// Submenu de corte ¬_¬
+		subMenu = new JMenuItem("Corte de caja");
+		subMenu.setActionCommand(CORTE_CAJA);
+		subMenu.addActionListener(this);
+		menu.add(subMenu);
+
         
         //Lo agregamos a la barra
         //agregar el menu a la barra
@@ -175,6 +182,8 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         JCategoriaPlatilloView categoriasView = new JCategoriaPlatilloView(this);
         JPlatilloView platilloView = new JPlatilloView(this);
         JTicketsView ventaView = new JTicketsView(this);
+		//
+		JCorteCajaView corteCaja = new JCorteCajaView(this);
 
         mViews.addView(usuariosView);
         mViews.addView(mesasView);
@@ -182,6 +191,8 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         mViews.addView(categoriasView);
         mViews.addView(platilloView);
         mViews.addView(ventaView);
+		//
+		mViews.addView(corteCaja);
     }
 
     @Override
