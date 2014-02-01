@@ -21,7 +21,7 @@ public class JCategoriaPlatilloPanel extends AbstractPanelView {
     private ControladorCategoriaPlatillo conCat;
     private DefaultListModel dlm;
     private DefaultComboBoxModel dcbm;
-
+    
     public JCategoriaPlatilloPanel(JAbstractMDI app) {
         initComponents();
         this.app = app;
@@ -307,6 +307,6 @@ public class JCategoriaPlatilloPanel extends AbstractPanelView {
 
     @Override
     public void activate() {
-        init();
+        init();        
     }
 }

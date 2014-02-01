@@ -35,7 +35,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
     private JMenuBar jMenuBarApp;
     private AppServiceFactory serviceFactory;
 
-     //******************************************
+    //******************************************
     //Los ACTION para abrir  las ventanitas.
     public static final String USUARIOS_ACTION = "usuariosView";
     public static final String MESAS_ACTION = "mesasView";
@@ -43,7 +43,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
     public static final String EMPRESA_ACTION = "empresaView";
     public static final String CATEGORIAS_ACTION = "categoriasView";
     public static final String PLATILLO_ACTION = "platilloView";
-    
+
     public AppPrincipal(AppConfig config) {
         super();
         jdPane = new JDesktopPane();
@@ -85,6 +85,46 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         boolean activa = true;
         JMenu menu;
         JMenuItem subMenu;
+        
+        //Menu de ventas
+        menu = new JMenu("Ventas");
+        
+        //Submenu de ventas
+        subMenu = new JMenuItem("Ventas");
+        subMenu.setActionCommand(TICKETS_ACTION);
+        subMenu.addActionListener(this);
+        subMenu.setEnabled(activa);
+
+        //Agregar el sub menu a su padre
+        menu.add(subMenu);
+        
+        //Lo agregamos a la barra
+        //agregar el menu a la barra
+        jMenuBarApp.add(menu);
+        
+        //Menú de platillos
+        menu = new JMenu("Platillos");
+        
+        subMenu = new JMenuItem("Categoria platillo");
+        subMenu.setActionCommand(CATEGORIAS_ACTION);
+        subMenu.addActionListener(this);
+        subMenu.setEnabled(activa);
+
+        //Agregar el sub menu a su padre
+        menu.add(subMenu);
+
+        subMenu = new JMenuItem("Platillos");
+        subMenu.setActionCommand(PLATILLO_ACTION);
+        subMenu.addActionListener(this);
+        subMenu.setEnabled(activa);
+
+        //Agregar el sub menu a su padre
+        menu.add(subMenu);
+        
+        //agregar el menu a la barra
+        jMenuBarApp.add(menu);
+        
+        
         //Aquí el menú de configuración
         menu = new JMenu("Configuración");
 
@@ -96,7 +136,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
 
         //Agregar el sub menu a su padre
         menu.add(subMenu);
-        
+
         subMenu = new JMenuItem("Mesas");
         subMenu.setActionCommand(MESAS_ACTION);
         subMenu.addActionListener(this);
@@ -104,7 +144,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
 
         //Agregar el sub menu a su padre
         menu.add(subMenu);
-        
+
         subMenu = new JMenuItem("Información Empresa");
         subMenu.setActionCommand(EMPRESA_ACTION);
         subMenu.addActionListener(this);
@@ -112,48 +152,6 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
 
         //Agregar el sub menu a su padre
         menu.add(subMenu);
-        
-        subMenu = new JMenuItem("Categoria platillo");
-        subMenu.setActionCommand(CATEGORIAS_ACTION);
-        subMenu.addActionListener(this);
-        subMenu.setEnabled(activa);
-
-        //Agregar el sub menu a su padre
-        menu.add(subMenu);
-        
-        subMenu = new JMenuItem("Platillos");
-        subMenu.setActionCommand(PLATILLO_ACTION);
-        subMenu.addActionListener(this);
-        subMenu.setEnabled(activa);
-
-        //Agregar el sub menu a su padre
-        menu.add(subMenu);
-        
-        subMenu = new JMenuItem("Ventas");
-        subMenu.setActionCommand(TICKETS_ACTION);
-        subMenu.addActionListener(this);
-        subMenu.setEnabled(activa);
-
-        //Agregar el sub menu a su padre
-        menu.add(subMenu);
-//        
-//        JMenuItem subMenu2 = new JMenuItem("Mesas");
-//        subMenu2.setActionCommand(MESAS_ACTION);
-//        subMenu2.addActionListener(this);
-//        subMenu2.setEnabled(activa);
-//
-//        //Agregar el sub menu a su padre
-//        menu.add(subMenu2);
-        
-        //Un separador
-//        menu.addSeparator();
-
-//        subMenu = new JMenuItem("Cierre de caja");
-//        subMenu.setActionCommand(CIERRE_ACTION);
-//        subMenu.addActionListener(this);
-//        subMenu.setEnabled(activa);
-//
-//        menu.add(subMenu);
 
         //agregar el menu a la barra
         jMenuBarApp.add(menu);
@@ -177,7 +175,7 @@ public class AppPrincipal extends JAbstractMDI implements ActionListener {
         JCategoriaPlatilloView categoriasView = new JCategoriaPlatilloView(this);
         JPlatilloView platilloView = new JPlatilloView(this);
         JTicketsView ventaView = new JTicketsView(this);
-        
+
         mViews.addView(usuariosView);
         mViews.addView(mesasView);
         mViews.addView(empresaView);

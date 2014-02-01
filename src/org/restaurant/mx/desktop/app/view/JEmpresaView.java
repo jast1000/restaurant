@@ -25,16 +25,16 @@ public class JEmpresaView extends JAbstractManageableIFrame{
     public JEmpresaView(JAbstractMDI app) {
         super();
         this.app = app;
-        panel = new JMesaPanel(app);
+        panel = new JEmpresaPanel(app);
         init();
     }
 
     public void init() {
-        setTitle("Usuarios");
+        setTitle("Información empresa");
         setMaximizable(true);
         setResizable(true);
         setClosable(true);
-        Dimension d = new Dimension(250, 250);
+        Dimension d = new Dimension(400, 400);
         setSize(d);
         setPreferredSize(d);
     }
@@ -51,7 +51,7 @@ public class JEmpresaView extends JAbstractManageableIFrame{
 
     @Override
     public String getNameView() {
-        return AppPrincipal.MESAS_ACTION;
+        return AppPrincipal.EMPRESA_ACTION;
     }
 
     @Override
